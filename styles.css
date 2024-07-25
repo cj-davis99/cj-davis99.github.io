@@ -49,6 +49,19 @@ a:visited {
 a:hover {
     text-decoration: underline;
 }
+/*
+This is the primary CSS I'm using to keep my footer at the bottom
+of all of my webpages
+*/
+.container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+}
+.content-wrap {
+    padding-bottom: 2.5rem;
+}
 footer {
     background: rgb(238, 238, 238);
     color: black;
@@ -86,15 +99,6 @@ footer button:hover {
 /* ===================================================== */
 /* Home page styling */
 /* ===================================================== */
-.container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    min-height: 100vh;
-}
-.content-wrap {
-    padding-bottom: 2.5rem;
-}
 section.home {
     padding: 5px;
     margin-top: 2.5px;
