@@ -94,6 +94,7 @@ footer ul li {
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 90%;
 }
 section.home-links {
     padding: 2.5%;
