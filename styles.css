@@ -155,7 +155,7 @@ section.math-camp li {
     margin: 0; /* Removes default margin from the ul element */
 }
 
-section.math-camp div {
+section.math-camp p {
     padding: 5px;
     max-width: 75vh;
     text-align: left;
