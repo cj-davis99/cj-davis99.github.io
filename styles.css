@@ -154,8 +154,8 @@ section.math-camp ul {
 
 section.math-camp li {
     list-style-type: none; /* Removes the bullet points */
-    padding: 10px; /* Removes default padding from the ul element */
-    margin: 0; /* Removes default margin from the ul element */
+    padding: 10px; /* Adds padding between list items */
+    margin: 0; /* Removes default margin from the list items */
 }
 
 /* ===================================================== */
