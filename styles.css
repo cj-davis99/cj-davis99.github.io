@@ -107,6 +107,7 @@ section.home-bio {
     margin: 0;
     width: 70%;
     flex: 1;
+    font-size: 1.1rem;
 }
 section.home-links ul li {
     margin-bottom: 5px;
