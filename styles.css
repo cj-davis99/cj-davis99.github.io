@@ -1,0 +1,579 @@
+/* =====================================================
+   CSS Variables
+   ===================================================== */
+:root {
+  --primary:    #1a2340;
+  --accent:     #4a6fa5;
+  --text:       #2c2c2c;
+  --muted:      #5a5a5a;
+  --bg:         #ffffff;
+  --surface:    #f7f7f7;
+  --border:     #e2e2e2;
+  --max-width:  860px;
+}
+
+/* =====================================================
+   Reset & Base
+   ===================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+::selection {
+  background: #ccdaf0;
+}
+
+/* =====================================================
+   Header & Navigation
+   ===================================================== */
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-name {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-name:hover {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+nav {
+  display: flex;
+  gap: 1.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.95rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* Hamburger (mobile) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+/* =====================================================
+   Main Content
+   ===================================================== */
+main {
+  flex: 1;
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* =====================================================
+   Home Page — Two-Column Grid
+   ===================================================== */
+.home-grid {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Left column */
+.profile-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.profile-col img.portrait {
+  width: 100%;
+  max-width: 180px;
+  border-radius: 4px;
+  display: block;
+}
+
+.contact-links {
+  list-style: none;
+  width: 100%;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.88rem;
+}
+
+.contact-links li {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.contact-links li:last-child {
+  border-bottom: none;
+}
+
+.contact-links a {
+  color: var(--muted);
+}
+
+.contact-links a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Email copy button */
+.email-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.88rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  position: relative;
+}
+
+.email-btn:hover {
+  color: var(--accent);
+}
+
+.email-btn .copied-msg {
+  display: none;
+  position: absolute;
+  top: -1.8rem;
+  left: 0;
+  background: #333;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.email-btn.copied .copied-msg {
+  display: block;
+}
+
+/* Right column — bio */
+.bio-col h1 {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.2rem;
+}
+
+.bio-col .subtitle {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.bio-col p {
+  margin-bottom: 1rem;
+  font-size: 1.02rem;
+}
+
+/* =====================================================
+   Research Page
+   ===================================================== */
+.page-title {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.research-section {
+  margin-bottom: 2.5rem;
+}
+
+.research-section h2 {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.25rem;
+}
+
+.paper {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.paper:last-child {
+  border-bottom: none;
+}
+
+.paper-title {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+
+.paper-authors {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
+  font-style: italic;
+}
+
+.paper-venue {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.88rem;
+}
+
+.paper-links a {
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.15rem 0.55rem;
+  border-radius: 3px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.paper-links a:hover {
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+}
+
+.paper-abstract summary {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.88rem;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+  margin-top: 0.4rem;
+}
+
+.paper-abstract summary:hover {
+  color: var(--accent);
+}
+
+.paper-abstract p {
+  font-size: 0.93rem;
+  color: var(--muted);
+  margin-top: 0.6rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--border);
+  line-height: 1.6;
+}
+
+.placeholder {
+  color: var(--muted);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+/* =====================================================
+   CV Page
+   ===================================================== */
+.cv-section {
+  margin-bottom: 1.5rem;
+}
+
+.cv-section h2 {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.cv-links {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.95rem;
+}
+
+.cv-embed {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+/* =====================================================
+   Math Camp Page
+   ===================================================== */
+.math-camp-list {
+  list-style: none;
+}
+
+.math-camp-list > li {
+  border-bottom: 1px solid var(--border);
+}
+
+.math-camp-list > li:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.math-camp-list details {
+  padding: 0;
+}
+
+.math-camp-list details summary {
+  padding: 0.85rem 0.25rem;
+  cursor: pointer;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary);
+  user-select: none;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.math-camp-list details summary::after {
+  content: '+';
+  font-size: 1.2rem;
+  color: var(--muted);
+  font-weight: 300;
+  transition: transform 0.2s;
+}
+
+.math-camp-list details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.math-camp-list details summary:hover {
+  color: var(--accent);
+}
+
+.math-camp-list details summary::-webkit-details-marker {
+  display: none;
+}
+
+.detail-body {
+  padding: 0.5rem 0.25rem 1.25rem 0.25rem;
+  font-size: 0.97rem;
+}
+
+.detail-body h3 {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.detail-body p {
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.detail-body a {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.88rem;
+}
+
+.problem-set-item {
+  padding: 0.85rem 0.25rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.97rem;
+  color: var(--text);
+}
+
+/* =====================================================
+   Footer
+   ===================================================== */
+footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+  text-align: center;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+footer .footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.5rem;
+}
+
+footer a {
+  color: var(--muted);
+}
+
+footer a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+footer .sep {
+  color: var(--border);
+}
+
+/* =====================================================
+   Mobile Responsive
+   ===================================================== */
+@media (max-width: 640px) {
+  /* Nav */
+  .nav-toggle {
+    display: flex;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: var(--surface);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem 1.5rem 1rem;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav a {
+    padding: 0.5rem 0;
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+  }
+
+  nav a:last-child {
+    border-bottom: none;
+  }
+
+  header .inner {
+    position: relative;
+  }
+
+  /* Home grid stacks vertically */
+  .home-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .profile-col {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .profile-col img.portrait {
+    width: 120px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .contact-links {
+    flex: 1;
+    min-width: 140px;
+  }
+
+  main {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .bio-col h1 {
+    font-size: 1.5rem;
+  }
+
+  .cv-embed {
+    height: 500px;
+  }
+}

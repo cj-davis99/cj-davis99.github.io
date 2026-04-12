@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cole Davis</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/jpeg" href="images/portrait.jpeg">
+</head>
+<body>
+
+  <header>
+    <div class="inner">
+      <a href="index.html" class="site-name">Cole Davis</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav">
+        <a href="research.html">Research</a>
+        <a href="cv.html">CV</a>
+        <a href="math-camp.html">Math Camp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="home-grid">
+
+      <!-- Left: photo + contact -->
+      <div class="profile-col">
+        <img src="images/portrait.jpeg" alt="Cole Davis" class="portrait">
+        <ul class="contact-links">
+          <li>
+            <button class="email-btn" onclick="copyEmail(this)">
+              <span class="copied-msg">Copied!</span>
+              <i class="fa-solid fa-envelope"></i> cole_davis[at]brown.edu
+            </button>
+          </li>
+          <li>
+            <a href="https://economics.brown.edu" target="_blank" rel="noopener"><i class="fa-solid fa-building-columns"></i> Brown Economics</a>
+          </li>
+          <li>
+            <a href="https://github.com/cj-davis99" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/cole-davis-econ-math/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          </li>
+          <li>
+            <a href="https://www.goodreads.com/cole_davis" target="_blank" rel="noopener"><i class="fa-brands fa-goodreads"></i> Goodreads</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right: bio -->
+      <div class="bio-col">
+        <h1>Cole Davis</h1>
+        <p class="subtitle">PhD Student in Economics &middot; Brown University</p>
+        <p>
+          I'm a third-year PhD student in economics at Brown University,
+          interested broadly in theoretical and applied econometrics.
+        </p>
+        <p>
+          I completed my undergraduate studies at the University of Colorado
+          Boulder, where I dual-majored in economics and mathematics and
+          minored in computer science. Sko Buffs!
+        </p>
+        <p>
+          Outside of research, I enjoy spending time with friends, exercising,
+          watching movies, and reading.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:cole_davis@brown.edu">Email</a>
+      <a href="https://github.com/cj-davis99" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/cole-davis-econ-math/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.goodreads.com/cole_davis" target="_blank" rel="noopener">Goodreads</a>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
